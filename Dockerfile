@@ -3,5 +3,6 @@ RUN mkdir -p opt/app/demo
 COPY target/*.jar /opt/app/demo
 RUN chmod -R 777 /opt
 USER root
-CMD ["java","-jar","/opt/app/demo/*.jar"]
+WORKDIR /opt/app/demo/
+CMD ["java","-jar","*.jar"]
 EXPOSE 8080
